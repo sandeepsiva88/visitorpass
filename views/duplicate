@@ -795,14 +795,17 @@ html(lang='en')
                                               span.input-group-addon
                                                   i.fa.fa-pencil
                                               input#id1.form-control(name='id1', style='margin-center : 5%', readonly='readonly')
-                                    tr
-                                      .form-group
-                                        td
-                                          br
-                                          br
-                                          input.btn.btn-info.send(type='submit', value='submit', onclick='randomStringToInput();')
-                                          br
-                                          br
+                              .col-lg-12
+                                tr
+                                  .form-group
+                                    td
+                                      br
+                                      br
+                                      input.btn.btn-info.send(type='submit', value='submit', onclick='randomStringToInput();')
+                                      |&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                      button.download.btn.btn-success Download
+                                      br
+                                      br
                   
                 #visitordata.tab-pane.fade.align
                   center
@@ -893,6 +896,7 @@ html(lang='en')
     script.
       $('.out').click(function(){
         var id = $(this).val();
+        //alert(id);
         $.post('/time', {id:id}, function(data, jqXHR){
           alert('Out time set Successfully');
           location.reload('/home');
